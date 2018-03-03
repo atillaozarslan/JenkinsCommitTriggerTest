@@ -5,4 +5,5 @@ jdk:
   
 build:
 ci:
-- mvn install
+    - mvn install
+    - cp -r target/site/jacoco/my.package.name/source-file-name.java.html shippable/codecoverage
