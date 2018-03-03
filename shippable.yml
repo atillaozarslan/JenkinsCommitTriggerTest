@@ -8,5 +8,8 @@ build:
     # Create folders for test and code coverage
     - mkdir -p shippable/codecoverage
     - mvn install
-    - mvn test
     - cp -r target shippable/codecoverage
+
+after_success:
+  - mvn clean cobertura:cobertura
+  - mvn test
