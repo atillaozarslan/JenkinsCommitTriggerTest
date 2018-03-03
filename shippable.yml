@@ -10,6 +10,7 @@ build:
     - mkdir -p shippable/codecoverage
     - mvn install
     - cp -r target shippable/codecoverage
+    - cp -r target shippable/testresults
 
 after_success:
   - mvn clean cobertura:cobertura
